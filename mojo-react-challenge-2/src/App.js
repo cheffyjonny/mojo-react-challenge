@@ -1,21 +1,32 @@
-import { gql, useQuery } from '@apollo/client';
+import { gql, useQuery } from "@apollo/client";
+import Media from "./Components/Media/Media";
 
-const GetMedia = gql`
+const GET_MEDIA = gql`
   query GetMedia {
     media {
       items {
+        thumbnailUri
+        featured
         id
+        source
+        title
+        type
+        url
+        description
       }
     }
   }
 `;
 
 function App() {
-  const { data } = useQuery(GetMedia);
-  console.log(data)
+  const { loading, error, data } = useQuery(GET_MEDIA);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error :&#40;</p>;
+
   return (
     <div>
-      App
+      <Media mediaItems={data} />
     </div>
   );
 }

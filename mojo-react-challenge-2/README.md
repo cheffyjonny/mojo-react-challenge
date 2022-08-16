@@ -36,6 +36,10 @@ If you have any questions please reach out to david@mojocrowe.com.
 ## Requirements
 
 - Build the Media page based on the provided Figma
+    - chapters
+    - content
+    - events
+    - media
 - Display only "featured" media in the Spotlight section
 - Add pagination to the Articles section
 - Write a test for one of the presentational components using the "Jest" library

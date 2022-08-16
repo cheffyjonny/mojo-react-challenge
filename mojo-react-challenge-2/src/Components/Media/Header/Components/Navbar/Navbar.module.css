@@ -1,0 +1,10 @@
+.flex{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.mojo_logo{
+    max-height: 90px;
+    width: auto;
+    max-width: 100%;
+}

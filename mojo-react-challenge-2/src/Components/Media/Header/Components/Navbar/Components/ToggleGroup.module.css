@@ -1,0 +1,25 @@
+.selector {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+ 
+  }
+  .selector > li {
+    display: inline-block;
+    padding: 0 0.5rem;
+  }
+  .selector button {
+    background-color: transparent;
+    box-shadow: none;
+    border: none;
+    font-size: 1rem;
+    padding: 8px 10px;
+    border-radius: 20px;
+    min-width: 75px;
+    transition: all 0.3s ease-out;
+    font-family: 'Alata', sans-serif;
+  }
+  .selector button.active {
+    color: #ffffff;
+    background-color: #20232a; 
+  }
