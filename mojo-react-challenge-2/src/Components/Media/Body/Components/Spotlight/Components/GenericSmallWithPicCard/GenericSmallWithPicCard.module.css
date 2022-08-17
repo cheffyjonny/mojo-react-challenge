@@ -1,0 +1,15 @@
+.flex_align_items_center{
+    display: flex;
+    align-items: center;
+}
+.third_column h3 {
+    font-family: 'Source Sans Pro', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+}
+.third_column_img{
+    max-height: 70px;
+    width: auto;
+    max-width: 100%;
+    margin-right: 20px;
+}

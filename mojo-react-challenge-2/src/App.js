@@ -13,6 +13,7 @@ const GET_MEDIA = gql`
         type
         url
         description
+        publishedAt
       }
     }
   }

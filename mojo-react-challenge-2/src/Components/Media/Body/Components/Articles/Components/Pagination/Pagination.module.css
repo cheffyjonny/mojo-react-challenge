@@ -1,0 +1,14 @@
+.pagination {
+}
+.pagination button {
+  color: #d3d3d3;
+  background-color: transparent;
+  text-decoration: none;
+  transition: color .3s;
+  border: none;
+}
+
+.pagination button.active {
+  color: black;
+}
+.pagination button:hover:not(.active) {color: black;}

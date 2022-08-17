@@ -3,12 +3,12 @@ import styles from "./ToggleGroup.module.css";
 
 function ToggleGroup() {
   const menuItems = ["Home", "Course & App", "Media", "Shop"];
-  const [activeLanguage, setActiveLanguage] = useState("Media");
-  const handleChange = (language) => {
-    setActiveLanguage(language);
+  const [activeItem, setActiveItem] = useState("Media");
+  const handleChange = (item) => {
+    setActiveItem(item);
   };
-  const getClass = (languageCode) => {
-    return languageCode === activeLanguage ? styles.active : "";
+  const getClass = (item) => {
+    return item === activeItem ? styles.active : "";
   };
   return (
     <div>

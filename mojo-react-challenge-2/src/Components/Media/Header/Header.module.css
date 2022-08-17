@@ -1,5 +1,5 @@
 #header{
-    height: 55vh;
+    min-height: 55vh;
     background-image: linear-gradient(180deg, #fdc777, #ffac31);
     padding-top: 6vh;
     padding-left: 6vw;

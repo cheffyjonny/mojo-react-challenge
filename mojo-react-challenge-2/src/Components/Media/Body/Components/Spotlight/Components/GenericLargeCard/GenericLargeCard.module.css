@@ -1,0 +1,11 @@
+
+.large_card p{
+    font-size: 0.8rem;
+}
+.img{
+    max-height: 500px;
+    width: auto;
+    max-width: 100%;
+    margin-bottom: 20px;
+}
+
