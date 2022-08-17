@@ -1,5 +1,6 @@
 import styles from "./Spotlight.module.css";
 import GenericLargeCard from "./Components/GenericLargeCard/GenericLargeCard";
+import GenericMediumCard from "../Articles/Components/GenericMediumCard/GenericMediumCard";
 import GenericSmallCard from "./Components/GenericSmallCard/GenericSmallCard";
 import GenericSmallWithPicCard from "./Components/GenericSmallWithPicCard/GenericSmallWithPicCard";
 
@@ -9,18 +10,18 @@ function Spotlight(props) {
   );
 
   //You can adjust the number of articles displayed.
-  const firstColumn = props.mediaItems.media.items.slice(0, 1);
-  const secondColumn = props.mediaItems.media.items.slice(1, 5);
-  const thirdColumn = props.mediaItems.media.items.slice(5, 11);
-  // const firstColumn = featuredItem.slice(0, 1);
-  // const secondColumn = featuredItem.slice(1, 5);
-  // const thirdColumn = featuredItem.slice(5, 11);
+  // const firstColumn = props.mediaItems.media.items.slice(0, 1);
+  // const secondColumn = props.mediaItems.media.items.slice(1, 5);
+  // const thirdColumn = props.mediaItems.media.items.slice(5, 11);
+  const firstColumn = featuredItem.slice(0, 1);
+  const secondColumn = featuredItem.slice(1, 5);
+  const thirdColumn = featuredItem.slice(5, 11);
 
-  //John's note : I've realised that the number of 'featured' media changed from 4 to 2 while I was working on the task.
-  //              So I've implement a small rule into how to diplay media.
-  //              Number of media 1-2 => 2 * columns, big | big
-  //                              3-5 => 2 * columns, big | small
-  //                              6-11 => 3 * columns, big | small | small w/ pic
+  //John's note : I've implement a small rule into how to diplay media.
+  //              Number of media 1-2  => 2 * columns, 1 * big |  1  * big
+  //                              3-4  => 2 * columns, 1 * big | 2-3 * medium
+  //                               5   => 2 * columns, 1 * big |  4  * small
+  //                              6-11 => 3 * columns, 1 * big |  4  * small  |  1-6 * small w/ pic
 
   return (
     <div id="spotlight">
@@ -38,11 +39,23 @@ function Spotlight(props) {
         {secondColumn.length > 0 && <hr className={styles.vertical} />}
 
         {secondColumn.length > 1 ? (
-          <div className={[styles.column_flex, "col"].join(" ")}>
-            {secondColumn.map((item, index) => {
-              return <GenericSmallCard key={index} item={item} index={index} />;
-            })}
-          </div>
+          secondColumn.length === 5 ? (
+            <div className={[styles.column_flex, "col"].join(" ")}>
+              {secondColumn.map((item, index) => {
+                return (
+                  <GenericSmallCard key={index} item={item} index={index} />
+                );
+              })}
+            </div>
+          ) : (
+            <div className={[styles.column_flex, "col"].join(" ")}>
+              {secondColumn.map((item, index) => {
+                return (
+                  <GenericMediumCard key={index} item={item} index={index} />
+                );
+              })}
+            </div>
+          )
         ) : (
           <div className="col">
             <GenericLargeCard item={secondColumn} />

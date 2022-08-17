@@ -3,15 +3,14 @@ import styles from "./Pagination.module.css";
 
 function Pagination({ setPage, mediaItems, page }) {
   const items = mediaItems;
-  const lastPageNum = Math.round(items.length / 6);
+  const lastPageNum = items ? Math.round(items.length / 6) : 1;
 
   return (
     <div className={styles.pagination}>
       <button
+        data-testid="media"
         className={page !== 1 ? styles.active : ""}
-        onClick={() =>
-          page >= 2 ? setPage(page - 1) : alert("This is the first page :)")
-        }
+        onClick={() => (page >= 2 ? setPage(page - 1) : "")}
       >
         <i className="bi bi-chevron-left"></i>
       </button>
@@ -21,11 +20,7 @@ function Pagination({ setPage, mediaItems, page }) {
             ? styles.active
             : ""
         }
-        onClick={() =>
-          page !== lastPageNum
-            ? setPage(page + 1)
-            : alert("This is the last page :)")
-        }
+        onClick={() => (page !== lastPageNum ? setPage(page + 1) : "")}
       >
         <i className="bi bi-chevron-right"></i>
       </button>
