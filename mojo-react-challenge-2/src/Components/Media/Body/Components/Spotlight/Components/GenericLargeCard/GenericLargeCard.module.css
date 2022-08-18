@@ -1,7 +1,15 @@
-
-.large_card p{
+.generic_large_card p{
     font-size: 0.8rem;
 }
+    .generic_large_card h2 {
+        font-size: 1.8rem;
+    }
+    .generic_large_card button{
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        text-align: start;
+    }
 .img{
     max-height: 500px;
     width: auto;

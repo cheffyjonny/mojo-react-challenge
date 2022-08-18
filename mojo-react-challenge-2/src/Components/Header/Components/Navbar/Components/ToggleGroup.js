@@ -4,12 +4,15 @@ import styles from "./ToggleGroup.module.css";
 function ToggleGroup() {
   const menuItems = ["Home", "Course & App", "Media", "Shop"];
   const [activeItem, setActiveItem] = useState("Media");
+
   const handleChange = (item) => {
     setActiveItem(item);
   };
+
   const getClass = (item) => {
     return item === activeItem ? styles.active : "";
   };
+
   return (
     <div>
       <ul className={styles.selector}>

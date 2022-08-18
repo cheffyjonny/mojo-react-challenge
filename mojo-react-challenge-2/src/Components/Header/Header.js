@@ -4,7 +4,7 @@ import Banner from "./Components/Banner/Banner";
 
 function Header() {
   return (
-    <div id={styles.header}>
+    <div id="header" className={styles.header}>
       <Navbar />
       <Banner />
     </div>

@@ -24,26 +24,34 @@ const DataFormatter = (input) => {
 };
 
 function GenericMediumCard({ item, index }) {
+  const handleClick = (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+    window.open(item.url);
+    return false;
+  };
   return (
     <div key={index} className={styles.generic_medium_card}>
       {index > 0 && <hr />}
-      <p className={styles.date}>{DataFormatter(item.publishedAt)}</p>
-      <div className={styles.flex}>
-        <div>
-          <h2>{item.title}</h2>
-          <p>
-            {item.description.length < 200
-              ? item.description
-              : item.description.slice(0, 200) + "..."}
-          </p>
-          <p className={styles.publicBy}>{item.source}</p>
+      <button onClick={handleClick}>
+        <p className={styles.date}>{DataFormatter(item.publishedAt)}</p>
+        <div className={styles.flex}>
+          <div>
+            <h2>{item.title}</h2>
+            <p>
+              {item.description.length < 200
+                ? item.description
+                : item.description.slice(0, 200) + "..."}
+            </p>
+            <p className={styles.publicBy}>{item.source}</p>
+          </div>
+          <img
+            alt="article_img"
+            src={item.thumbnailUri}
+            className={styles.column_img}
+          />
         </div>
-        <img
-          alt="article_img"
-          src={item.thumbnailUri}
-          className={styles.column_img}
-        />
-      </div>
+      </button>
     </div>
   );
 }

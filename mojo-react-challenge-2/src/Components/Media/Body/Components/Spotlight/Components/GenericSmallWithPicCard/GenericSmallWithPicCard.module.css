@@ -1,3 +1,9 @@
+.generic_small_with_pic_card button{
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    text-align: start;
+}
 .flex_align_items_center{
     display: flex;
     align-items: center;

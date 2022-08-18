@@ -25,3 +25,24 @@
         margin-top: 10px;
     }
 
+
+@media only screen and (max-width: 650px) {
+    .flex {
+        flex-direction: column;
+    }
+    .ben_crowe_img{
+        max-height: 150px;
+        width: auto;
+        max-width: 100%;
+    }
+    .img_box{
+        padding: 40px 50px;
+    }
+    .text_box h1 {
+        font-size: 2rem;
+ 
+    }
+    .text_box h3 {
+        font-size: 1rem;
+    }
+}
