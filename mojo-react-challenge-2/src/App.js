@@ -27,7 +27,8 @@ function App() {
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :&#40;</p>;
 
-  //John's note : The NavBar in the Header doesn't route to anywhere at this stage :)
+  //John's note : The NavBar in the Header and Sidebar doesn't route to anywhere at this stage :)
+  //              If I implement router for this project, I'd implement router view where Media component is.
 
   return (
     <div>
